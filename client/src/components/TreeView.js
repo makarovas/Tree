@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-const MainTreeView = (props) => {
+const MainTreeView = ({ tabValue }) => {
   const classes = useStyles();
   const { root, typeRoot, loading, error } = useSelector((state) => state);
 
@@ -36,7 +36,7 @@ const MainTreeView = (props) => {
           defaultExpandIcon={<ExpandMoreIcon />}
           defaultCollapseIcon={<ExpandMoreIcon />}
         >
-          <NodeView data={props.tabValue === 0 ? root : typeRoot} />
+          <NodeView data={tabValue === 0 ? root : typeRoot} />
         </TreeView>
       )}
       {error && <h1>Fetching Error</h1>}

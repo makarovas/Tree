@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Layout = (props) => {
+const Layout = ({ children }) => {
   const classes = useStyles();
 
   return (
@@ -45,7 +45,7 @@ const Layout = (props) => {
       <Grid item container>
         <Grid item xs={false} sm={1} />
         <Grid item xs={12} sm={10}>
-          {props.children}
+          {children}
         </Grid>
         <Grid item xs={false} sm={1} />
       </Grid>
